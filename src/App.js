@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import Home from "./components/Home"
 import './App.css';
-
+import { useEffect } from "react";
+import DataProvider from "./context/DataProvider";
 function App() {
+  useEffect(() => {
+    const unloadCallback = (event) => {
+      event.preventDefault();
+      event.returnValue = "";
+      return "";
+    };
+
+    window.addEventListener("beforeunload", unloadCallback);
+    return () => window.removeEventListener("beforeunload", unloadCallback);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <DataProvider>
+      <Home />
+    </DataProvider>
+  )
 }
 
 export default App;
