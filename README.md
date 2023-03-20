@@ -1,2 +1,2 @@
 # CodeEditor
-[click here to view the website](https://harsheditor.netlify.app/)
+[click here to view the website](https://dev-alt.netlify.app/)
