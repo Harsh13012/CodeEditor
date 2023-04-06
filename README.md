@@ -1,2 +1,2 @@
 # CodeEditor
-[click here to view the website](https://dev-alt.netlify.app/)
+[click here to view the website](https://code-dev.netlify.app/)
